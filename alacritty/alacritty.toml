@@ -1,0 +1,72 @@
+[font]
+normal.family = "JetBrainsMonoNL Nerd Font"
+size = 14
+# offset.y = 5
+# offset.x = 1
+# glyph_offset.y = 5
+
+[env]
+term = "xterm-256color"
+
+[window]
+# Padding
+padding.x = 10 
+padding.y = 10
+
+
+#Opacity
+opacity = 0.75
+
+
+[colors.primary]
+background = "#000000"
+foreground = "#FFFFFF"
+
+
+#Theme
+# [colors.normal]
+# black=   '#1a1a1a'
+# red=     '#f4005f'
+# green=   '#98e024'
+# yellow=  '#fa8419'
+# blue=    '#9d65ff'
+# magenta= '#f4005f'
+# cyan=    '#58d1eb'
+# white=   '#c4c5b5'
+#
+# [colors.bright]
+# black=   '#625e4c'
+# red=     '#f4005f'
+# green=   '#98e024'
+# yellow=  '#e0d561'
+# blue=    '#9d65ff'
+# magenta= '#f4005f'
+# cyan=    '#58d1eb'
+# white=   '#f6f6ef'
+
+
+
+# Normal colors
+[colors.normal]
+black      = '#0c0c0c'
+red        = '#c50f1f'
+green      = '#13a10e'
+yellow     = '#c19c00'
+blue       = '#0037da'
+magenta    = '#881798'
+cyan       = '#3a96dd'
+white      = '#cccccc'
+
+# Bright colors
+[colors.bright]
+black      = '#767676'
+red        = '#e74856'
+green      = '#16c60c'
+yellow     = '#f9f1a5'
+blue       = '#3b78ff'
+magenta    = '#b4009e'
+cyan       = '#61d6d6'
+white      = '#f2f2f2'
+
+[terminal]
+shell = "tmux"

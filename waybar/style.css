@@ -100,7 +100,7 @@ button {
 }
 
 #workspaces button.active {
-  color: @mauve;
+  color: #71c7ec;
 }
 
 #workspaces button.urgent {

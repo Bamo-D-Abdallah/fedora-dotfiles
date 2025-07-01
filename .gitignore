@@ -22,3 +22,7 @@ qBittorrent
 pavucontrol.ini
 org.gnome.Ptyxis
 connections.db
+JetBrains
+autostart
+dunst
+fuzzel

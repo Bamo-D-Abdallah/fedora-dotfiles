@@ -3,11 +3,11 @@
     "height": 37,
     "spacing": 5,
   // Choose the order of the modules
-  "modules-left": ["hyprland/workspaces", "hyprland/submap"],
+  "modules-left": ["hyprland/workspaces", "hyprland/submap", "custom/separator-left", "custom/docker"],
   "modules-center": ["user", "custom/notification"],
   "modules-right": [
       "tray",
-      "custom/separator",
+      "custom/separator-right",
       "idle_inhibitor",
       "power-profiles-daemon",
       "pulseaudio",
@@ -65,7 +65,7 @@
       "avatar": "/home/bamo/.config/waybar/nixos-logo.webp"
   },
   "tray": {
-      "spacing": 10
+      "spacing": 10,
   },
   "clock": {
       "tooltip-format": "{:%A, %B %d, %Y}",
@@ -136,8 +136,8 @@
           "transition-left-to-right": false,
       },
       "modules": [
-      "custom/memory",
-      "disk"
+        "custom/memory",
+        "disk"
       ]
   },
   "custom/power": {
@@ -226,8 +226,13 @@
       "format": "{}",
       "return-type": "text"
   },
-  "custom/separator": {
-      "format": "<span color='#ffffff'>|</span>"
+
+  "custom/separator-left": {
+      "format": "<span color='#888888'>    </span>"
+  },
+
+  "custom/separator-right": {
+      "format": "<span color='#888888'>    </span>"
   },
   "idle_inhibitor": {
       "format": "{icon}",
@@ -278,6 +283,15 @@
       "return-type": "json",
       "format": " {} ",
       "max-length": 10
+  },
+
+
+  "custom/docker": {
+      "exec": "~/.config/waybar/scripts/docker-information.sh",
+      "interval": 10,
+      "return-type": "json",
+      "format": " {} ",
+      "max-length": 20
   }
 
 

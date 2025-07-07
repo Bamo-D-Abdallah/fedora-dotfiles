@@ -21,5 +21,5 @@ fi
 icon=""
 
 # Output JSON for Waybar
-echo "{\"text\": \"<span color='${color}'>${used_percent}% ${icon}</span>\", \"tooltip\": \"RAM Usage: ${used_f}G/${total_f}G\"}"
+echo "{\"text\": \"<span color='${color}'>${used_f}G/${total_f}G ${icon}</span>\", \"tooltip\": \"RAM Usage: ${used_percent}% \"}"
 

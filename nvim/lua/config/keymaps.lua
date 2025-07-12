@@ -94,7 +94,7 @@ map.set("n", "<A-p>", function() vim.cmd('DBUIToggle') end, { desc = "Opens the 
 
 
 -- Neotest --
-
+--[[
 map.set("n", "<leader>tm", function() vim.cmd('Neotest summary') end, { desc = "Opens the test menu summary" })
 
 map.set("n", "<leader>tc", function() vim.cmd('Neotest run') end, { desc = "Runs the current test under the curssor" })
@@ -103,7 +103,7 @@ map.set("n", "<leader>tr", function() require("neotest").run.run(vim.fn.expand("
 
 map.set("n", "<M-s>", function() vim.cmd('Neotest stop') end, { desc = "Stops the tests" })
 
-map.set("n", "<leader>tp", function() vim.cmd('Neotest output') end, { desc = "Shows the output of the test" })
+map.set("n", "<leader>tp", function() vim.cmd('Neotest output') end, { desc = "Shows the output of the test" }) ]]
 
 
 
@@ -136,6 +136,6 @@ map.set('n', '<M-B>', function() dap.set_breakpoint(vim.fn.input 'Breakpoint con
 
 
 -- Floating terminal --
-map.set("n", "<M-t>", function() require('FTerm').toggle() end, { desc = "Shows the output of the test" })
-map.set("t", "<M-t>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+--[[ map.set("n", "<M-t>", function() require('FTerm').toggle() end, { desc = "Shows the output of the test" })
+map.set("t", "<M-t>", '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>') ]]
 

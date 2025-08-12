@@ -15,7 +15,7 @@ configuration {
 }
 
 window {
-    width: 15%;
+    width: 20%;
     height: 500px;
     border-radius: 20px;
     padding: 1em;

@@ -1,0 +1,10 @@
+2025/08/12-15:13:22.941 10af4 Reusing MANIFEST /home/bamo/.config/Postman/Partitions/55cbd6e9-2ab4-4a1a-bfd6-0b88389261e4/IndexedDB/file__0.indexeddb.leveldb/MANIFEST-000001
+2025/08/12-15:13:22.942 10af4 Recovering log #10
+2025/08/12-15:13:22.943 10af4 Reusing old log /home/bamo/.config/Postman/Partitions/55cbd6e9-2ab4-4a1a-bfd6-0b88389261e4/IndexedDB/file__0.indexeddb.leveldb/000010.log 
+2025/08/12-15:49:54.504 10add Level-0 table #14: started
+2025/08/12-15:49:54.527 10add Level-0 table #14: 1084817 bytes OK
+2025/08/12-15:49:54.530 10add Delete type=0 #10
+2025/08/12-15:50:05.820 10af2 Compacting 1@0 + 1@1 files
+2025/08/12-15:50:05.832 10af2 Generated table #15@0: 2361 keys, 245326 bytes
+2025/08/12-15:50:05.832 10af2 Compacted 1@0 + 1@1 files => 245326 bytes
+2025/08/12-15:50:05.855 10af2 compacted to: files[ 0 1 1 0 0 0 0 ]

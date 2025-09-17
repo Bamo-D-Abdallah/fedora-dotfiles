@@ -1,0 +1,40 @@
+# core
+neovim
+tmux
+alacritty
+git
+python3
+python3-pip
+nodejs
+npm
+java-21-openjdk
+java-21-openjdk-devel
+okular
+vlc
+fzf
+fd-find
+blueman-manage
+nm-applet
+
+# browsers (repos auto-added when present here)
+brave-browser
+google-chrome-stable
+
+# docker (repo auto-added when present here)
+docker-ce
+docker-ce-cli
+containerd.io
+
+# hyprland stack (from COPR below)
+hyprland
+hyprpaper
+hypridle
+hyprlock
+waybar
+mako
+xdg-desktop-portal-hyprland
+wl-clipboard
+grim
+slurp
+swaybg
+

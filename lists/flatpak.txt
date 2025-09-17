@@ -1,0 +1,5 @@
+md.obsidian.Obsidian flathub
+net.ankiweb.Anki      flathub
+com.discordapp.Discord flathub
+org.telegram.desktop flathub
+com.getpostman.Postman flathub

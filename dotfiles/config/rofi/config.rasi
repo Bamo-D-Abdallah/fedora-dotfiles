@@ -1,0 +1,89 @@
+configuration {
+    display-drun: "Applications";
+    font: "JetBrainsMono Nerd Font";
+    modi: "drun";
+}
+
+@theme "/dev/null"
+
+* {
+    background-color: #0e0e0e;
+    color: #d0d0d0;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+window {
+    width: 20%;
+    height: 500px;
+    border-radius: 20px;
+    padding: 1em;
+    background-color: #0e0e0e;
+}
+
+inputbar {
+    background-color: #161616;
+    border-radius: 10px;
+    padding: 0.8em 0.8em;
+    spacing: 8px;
+    children: [prompt, entry];
+    font-size: 20px;
+    margin: 0 0 20px 0;
+}
+
+prompt {
+    background-color: transparent;
+    color: #8ab4f8;
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    min-width: 0;
+}
+
+entry {
+    background-color: transparent;
+    color: #e0e0e0;
+    font-size: inherit;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    expand: true;
+    min-width: 0;
+    marign: 20px 0px;
+}
+
+listview {
+    background-color: #0e0e0e;
+    spacing: 10px;
+    lines: 5;
+    scrollbar: false;
+}
+
+element {
+    orientation: horizontal;
+    children: [element-icon, element-text];
+    spacing: 20px;
+    background-color: #1c1c1c;
+    padding: 10px;
+    color: #d0d0d0;
+    border-radius: 6px;
+}
+
+element selected {
+    background-color: #007aff;
+    color: #ffffff;
+}
+
+element-text {
+    font-size: 26px;
+    background-color: transparent;
+    expand: true;
+    color: inherit;
+}
+
+element-icon {
+    size: 32px;
+    background-color: transparent;
+}
+

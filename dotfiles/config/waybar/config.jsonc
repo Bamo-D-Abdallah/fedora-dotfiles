@@ -1,0 +1,301 @@
+{
+    "layer": "bottom",
+    "height": 37,
+    "spacing": 5,
+  // Choose the order of the modules
+  "modules-left": ["hyprland/workspaces", "hyprland/submap", "custom/separator-left", "custom/docker"],
+  "modules-center": ["user", "custom/notification"],
+  "modules-right": [
+      "tray",
+      "custom/separator-right",
+      "idle_inhibitor",
+      "power-profiles-daemon",
+      "pulseaudio",
+      "bluetooth",
+      "network",
+      "group/cpu",
+      "group/memory",
+      "battery",
+      "backlight",
+      "clock",
+      "hyprland/language",
+      "group/power",
+  ],
+  "hyprland/window": {
+      "separate-outputs": false
+  },
+  "hyprland/workspaces": {
+      "format": "{icon}",
+      "on-click": "activate",
+      "format-icons": {
+          "1": "󰖟",
+          "2": "",
+          "3": "",
+          "4": "",
+          "5": "󰊤",
+          "6": "󰭹",
+          "7": "",
+          "8": "",
+          "9": "",
+          "special": "",
+          "urgent": "",
+          "default": ""
+      },
+      "sort-by-number": true,
+      "all-outputs": true,
+      "show-special": true,
+      "persistent-workspaces": {
+          "1": [],
+          "2": [],
+          "3": [],
+          "4": [],
+          "5": [],
+          "6": [],
+          "7": [],
+          "8": [],
+          "9": []
+      }
+  },
+  "user": {
+      "format": "  Bamo | Working: ({work_H}hr {work_M} mins)",
+      "interval": 60,
+      "height": 23,
+      "width": 23,
+      "icon": true,
+      "avatar": "/home/bamo/.config/waybar/nixos-logo.webp"
+  },
+  "tray": {
+      "spacing": 10,
+  },
+  "clock": {
+      "tooltip-format": "{:%A, %B %d, %Y}",
+      "format": "{:%I:%M}  "
+  },
+  "battery": {
+      "states": {
+          "warning": 40
+      },
+      "format": " {capacity}% {icon}",
+      "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "format-charging": "󰂄 {capacity}%",
+      "format-warning": "󰂃 {capacity}%",
+      "tooltip-format": "{capacity}%"
+  },
+  "network": {
+      "format-wifi": "<span color='#00FFFF'> </span>",
+      "format-ethernet": "󰈀",
+      "format-disconnected": "󰖪",
+      "tooltip-format": "Connected to {essid}({ipaddr})",
+      "tooltip-format-ethernet": "{ifname} 󰈀",
+      "on-click": "nm-applet"
+  },
+  "pulseaudio": {
+      "scroll-step": 5, // %, can be a float
+      "format": "{icon}",
+      "format-muted": "",
+      "format-icons": {
+          "default": ["", "", ""]
+      },
+      "on-click-right": "pavucontrol -t 3",
+      "on-click": "pactl -- set-sink-mute 0 toggle",
+      "tooltip-format": "{volume}% volume",
+      "on-scroll-up": "$HOME/.config/scripts/volume --inc",
+      "on-scroll-down": "$HOME/.config/scripts/volume --dec",
+  },
+  "group/power": {
+      "orientation": "horizontal",
+      "drawer": {
+          "transition-duration": 500,
+          "transition-left-to-right": false,
+      },
+      "children-class": "not-power",
+
+      "modules": [
+          "custom/power",
+          "custom/reboot",
+          "custom/suspend",
+          "custom/hibernate",
+          "custom/lock",
+      ]
+  },
+  "group/cpu": {
+      "orientation": "horizontal",
+            "drawer": {
+          "transition-duration": 500,
+          "transition-left-to-right": false,
+      },
+      "modules": [
+      "custom/cpu",
+      "custom/temperature"
+      ]
+  },
+  "group/memory": {
+      "orientation": "horizontal",
+      "drawer": {
+          "transition-duration": 500,
+          "transition-left-to-right": false,
+      },
+      "modules": [
+        "custom/memory",
+        "disk"
+      ]
+  },
+  "custom/power": {
+      "format": " ⏻ ",
+      "on-click": "poweroff",
+      "tooltip": true,
+      "tooltip-format": "Power off"
+  },
+  "custom/lock": {
+      "format": "<span color='#00FFFF'>  </span>",
+      "on-click": "hyprlock",
+      "tooltip": true,
+      "tooltip-format": "Lock"
+  },
+  "custom/suspend": {
+      "format": " 󰤄 ",
+      "on-click": "systemctl suspend",
+      "tooltip": true,
+      "tooltip-format": "Suspend"
+  },
+  "custom/hibernate": {
+      "format": " ⏼ ",
+      "tooltip": true,
+      "tooltip-format": "Hibernate",
+      "on-click": "systemctl hibernate"
+  },
+  "custom/reboot": {
+      "format": "<span color='#FFD700'>  </span>",
+      "on-click": "systemctl reboot",
+      "tooltip": true,
+      "tooltip-format": "Reboot"
+  },
+
+  "backlight": {
+      "device": "intel_backlight",
+      "format": "<span color='#FFD700'>{icon}</span>{percent}% ",
+      "tooltip": true,
+      "tooltip-format": "Brightness: {percent}%",
+      "format-icons": [
+          "<span color='#696969'> 󰃞 </span>",
+          "<span color='#A9A9A9'> 󰃝 </span>",
+          "<span color='#FFFF66'> 󰃟 </span>",
+          "<span color='#FFD700'> 󰃠 </span>"
+      ]
+  },
+  "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+          "default": "",
+          "performance": "",
+          "balanced": "<span color='#ffe200'></span>",
+          "power-saver": "<span color='#33ff49'></span>"
+      }
+  },
+  "image": {
+      "path": "/home/adxthya/.config/waybar/nix.svg",
+      "size": 20,
+      "interval": 5,
+      "on-click": "brave https://search.nixos.org/packages",
+  },
+  "bluetooth": {
+    // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+    "format": "<span color='#0082FC'>󰂯</span>",
+    "format-disabled": "<span color='#D3D3D3'>󰂲</span>", // an empty format will hide the module
+    "format-connected": "󰂱",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click-right": "blueman-manager",
+    "on-click": "rfkill toggle bluetooth"
+  },
+  "custom/notification": {
+      "exec": "~/.config/waybar/scripts/notification.sh",
+      "interval": 5,
+      "return-type": "json",
+      "format": "{icon} {text}",
+      "on-click": "makoctl restore",
+      "on-click-right": "makoctl mode -t do-not-disturb",
+      "on-click-middle": "makoctl history-clear"
+  },
+  "custom/weather": {
+      "exec": "~/.config/scripts/weather",
+      "interval": 3600,
+      "format": "{}",
+      "return-type": "text"
+  },
+
+  "custom/separator-left": {
+      "format": "<span color='#888888'>    </span>"
+  },
+
+  "custom/separator-right": {
+      "format": "<span color='#888888'>    </span>"
+  },
+  "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+          "activated": "<span color='#33ff49'></span> ",
+          "deactivated": "<span color='#C70039'></span> "
+      }
+  },
+
+  "hyprland/submap": {
+      "format": "󰹸 {}",
+      "max-length": 8,
+      "tooltip": false
+  },
+
+  "hyprland/language": {
+      "format": " {}   ",
+      "format-en": "EN",
+      "format-ar": "AR",
+      "keyboard-name": "at-translated-set-2-keyboard",
+      "on-click": "exec hyprctl switchxkblayout at-translated-set-2-keyboard next"
+  },
+
+  "custom/memory": {
+      "exec": "~/.config/waybar/scripts/memory-colored.sh",
+      "interval": 30,
+      "return-type": "json",
+      "format": " {} "
+  },
+
+
+  "disk": {
+      "interval": 30,
+      "format": " {specific_free:0.2f}GB  ",
+      "unit": "GB"
+  },
+
+  "custom/temperature": {
+      "exec": "~/.config/waybar/scripts/temp-colored.sh",
+      "interval": 5,
+      "return-type": "json",
+      "format": " {} "
+  },
+
+  "custom/cpu": {
+      "exec": "~/.config/waybar/scripts/cpu-colored.sh",
+      "interval": 10,
+      "return-type": "json",
+      "format": " {} ",
+      "max-length": 10
+  },
+
+
+  "custom/docker": {
+      "exec": "~/.config/waybar/scripts/docker-information.sh",
+      "interval": 10,
+      "return-type": "json",
+      "format": " {} ",
+      "max-length": 20
+  }
+
+
+}
+
+
+// vim: ft=jsonc

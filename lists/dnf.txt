@@ -15,6 +15,7 @@ fzf
 fd-find
 blueman-manage
 nm-applet
+gh
 
 # browsers (repos auto-added when present here)
 brave-browser

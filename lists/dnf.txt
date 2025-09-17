@@ -13,7 +13,7 @@ okular
 vlc
 fzf
 fd-find
-blueman-manage
+blueman
 nm-applet
 gh
 
@@ -38,4 +38,4 @@ wl-clipboard
 grim
 slurp
 swaybg
-
+rofi

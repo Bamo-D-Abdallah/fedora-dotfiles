@@ -55,7 +55,7 @@ set_bash_prompt() {
   if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     local branch="$(git_branch)"
     local dirty="$(git_dirty)"
-    git_part=" ${BLUE}git:${RESET}${BLUE}(${BOLDRED}${branch}${BLUE})${RESET}${BAD}${dirty}${RESET}"
+    git_part=" ${BLUE}git:${RESET}${BLUE}(${BOLDRED}${branch}${RESET}${BLUE})${RESET}${BAD}${dirty}${RESET}"
   fi
 
   PS1="${path}${git_part} "

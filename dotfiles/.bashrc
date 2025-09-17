@@ -26,6 +26,7 @@ unset rc
 
 source ~/.git-prompt.sh
 
+
 # Colors
 MINT='\[\e[38;5;108m\]'      # path
 BLUE='\[\e[38;5;75m\]'       # git: and ()
@@ -35,23 +36,32 @@ RESET='\[\e[0m\]'
 
 # Git helpers
 git_branch() {
-  git rev-parse --is-inside-work-tree >/dev/null 2>&1 || return
-  git symbolic-ref --quiet --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null
+  git symbolic-ref --quiet --short HEAD 2>/dev/null || \
+  git rev-parse --short HEAD 2>/dev/null
 }
 
 git_dirty() {
-  git rev-parse --is-inside-work-tree >/dev/null 2>&1 || return
   if ! git diff --quiet --ignore-submodules -- 2>/dev/null || \
      ! git diff --cached --quiet --ignore-submodules -- 2>/dev/null; then
     printf " ✗"
   fi
 }
 
-# Final PS1
-PS1="${MINT}\w${RESET}$(git rev-parse --is-inside-work-tree >/dev/null 2>&1 \
-    && printf " ${BLUE}git:${RESET}${BLUE}(${BOLDRED}$(git_branch)${BLUE})${RESET}${BAD}$(git_dirty)${RESET}") "
+# Build PS1 dynamically
+set_bash_prompt() {
+  local path="${MINT}\w${RESET}"
+  local git_part=""
 
+  if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    local branch="$(git_branch)"
+    local dirty="$(git_dirty)"
+    git_part=" ${BLUE}git:${RESET}${BLUE}(${BOLDRED}${branch}${BLUE})${RESET}${BAD}${dirty}${RESET}"
+  fi
 
+  PS1="${path}${git_part} "
+}
+
+PROMPT_COMMAND=set_bash_prompt
 
 export ANDROID_SDK_ROOT="$HOME/Android/Sdk"
 export PATH="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH"
